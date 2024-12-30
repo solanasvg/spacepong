@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Space Pong</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no", "orientation": "landscape"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas class="stars"></canvas>
+<div class="cockpit"></div>
+<div class="pilot"></div>
+<audio preload="auto" src="data:audio/wav;base64,UklGRhQQAABXQVZFZm10IBAAAAABAAEAESsAABErAAABAAgAZGF0YfAPAACBY2ek1oEfacx2N1yM4Zg9VJq4ZUuB0YcvXn3PpkhPh8N2RHrNiEBqj61pNnrIhUpq1+xbK1SjcyJRltG4xr9xXwwAT6dveO7//3YAAAAAAFns/////74AAAAUqqGJ////tSUAAA8APKf//////zwAACk8LIDT////ljMMAAAKiMnQ7P//0QAAAA8QH4D//////JAAAABNREur////6Ys1AAAJak170f///5JEBwAAAIimn9v///9SAAAAAABR1uHl////cwAAAEs/L37R////3nc2AAAAcIVnuf///96ISgAAAGZgYrH/////v3cAAAAsfXR63v///+xiMgAAABGB0KTC////xhMAAAAAKJrNv9H///+TShQAAABwjHe0////7NN6AAAAIVVRe8///////4QAAAAdHyFzuP//+P//4iEAAAA3LDqA1//z////4iQAAAAMH2Kq6OHk////jCcAAAAADWDAwK7y////zzIAAAAAAEaV6MC/+P//7IwoAAAAABh20Kej4P///9GJPwoAAABYeHOZtf3//+Tv21cAAAAAFjaCzMix7v//59CJSwAAAABeaXCy4czX////yXAsCgAAAFtlc6fW9ejY///hlj8XAAAAKGVxjMbYxtv//+m0iVERAAAAQE5smsXw1M/p///RkEckAAAAFmdqiKrI+N3U6f//w3AlBgAAABt+gIutvuDz3dbp/92QNgIAAAAAQ5qxoa2r1vrd0+HzzHowCQMAAAJLmqegscraw8Pd+eu8j2k1AAAADz9PhabK166gv/DlzcjPzG0UAAAAABNZpK6jqLvYt6vK0/DUq5pxRAAAAAAQNnOYyNaynbDJwLHD2tCoiFc3AgAAADdNbJi008amqrvDtbnN2q6VhFs8AAAAA0BYbJ/GxbWnscKtn7i+1sqgmYxnIgAAAwYTR3OmzLiqt8WmkJi0zMKutLmdhGA8JAAAABhOaX2cucqxqKi1qo6atMm1p6irqoBVLB4QAAMWOniJla2wwrmknJyqkoihub+rnKOojmxUPBEABx0wN1WAq7ersruyoJOYoJKFlai8qpqfn5yCbWBEFwUNFzJHUWqSqLy/rauorqGLi5OQhI6fsK6gmZaTloBtWzUsIg8YKEZSYH6VtLiyra6xppCQlZaJfoGPlZmco6iVi4iHiHZqXEouGh8sNzxLW3eSnKatt7eooZ+fnI6Lj4+EgIKLkImPmKOgk4yFiIF0cHZwWUQyLjU1OkNUaWlxiJyqq62wsaegmZmYjIuOjIyChIGJhYCAh4yOj5OWkoiCgX6AdG9xeHdXLg0ABjVgi6HI//+uUjo3advQUkdGcOvMT0ZHeO/PT0RDdvLMTkFBcPLPTkA8bfPTTTo5Z/XYUTw6Y+jhUjU6WN3sYjU6Uc36djM3SLf/izM5P6f/pDc2OY//vzo1N3P/1kszN2Do82AsNk7I/4UvOT+j/7E1Nzd6/9dALzNi7vViLjxLv/+WLjU3jv/JOjAyZfPzWywzRr7/mC42OoH/1EQrMlze/3QrNj2k/7szLjVm+PZeKTZBsP+uMC42cf/sUSg2SLH/qC8wOm/89VkuM0ew/7QyLjZl6/9qKTZAmP/PPyczWMr/jCgwN3j/8FIoNUSj/78zLjJe1v+IKDU5eP/yWCk2Rpz/zzwrNVW+/6YuLzxl3v99KTA9ev/zXyUzRpD/3UMpNkuk/8g3KzVUuP+xMi45X8n/nC8vPGXY/4ssMj1w4P9+LDNBceX/eicwP3Ps/3gvMEB35/92KzJEdOX/gC4vQ3Db/4cvNT9szf+aMjA9YsD/qjIyOlyt/8M5Jy5Nlf/QQSIzTon/6U8pMkh46P9wKy9Dasn/oC8vPFyq/8g/LjdSjv/yWzAyS3bU/5IwLz9lp//JQC85VIjz/WosN0dvvP+xNy83W5L881wvNk1xv/+oNjA/XJD682AzMkpquP+5OTA2V4Xp/3QyM0FppP/WQzA1VHbI/6A3MzpfjPL8bDAzQ2Wf/9hHMjJRcbT/uzkvNVh6zf+ZMjA9YIfi/3szNUFikPLwZjAwSGeS/+hUMjVKZ5z/3lQzNk9qn//gTjU2S2qa/+JVMzZLaZj/5FkzNkpqk/XuajIySmeL5/p+NTVBZYHQ/5M2NT1beL//sT0vOVdzpP/TRzY1Tm2S8/BsNzdBaYDK/5w6Mzpic6v/0EozNU9wj+T9gDczQGZ6tf/DQzA5WW+P6fl7OjdEZnew/8NIMzpUcIjY/5Y3Mzxcc5/95WM2Okhne7L/w0Q1PFFxiM//pD0zOll3kOH/iTo2QF53mu/wcDY6RGd3nPbgYC4wQWV2n/bgXjI3QWp6n/jdYzM3RGl+nPPkbDczRmV6mufygDc3QWJ3kNf/mDw2P1t3iML/tUAzP1Vtfqv/2l45Okdsepnh9Yw5M0Nedoi7/8BKNTpSbX6a5faCOTlDX3aEt//FTTY8Tmp9ltb/mT02P1h0fqby4nA6MkNgeIi0/8pPNjdHZnqOw/+1RDU8T2x9kMb/q0MyOVVsfpDK/6hBMjpVcICSxf2tQzI5Uml7i779uUgyOk9sfomx+c9cOjxIY3eFoeXsgjozQ15xfpPG/K5DMj1UaYCIpPPbZzo1Q2B0gpLG+apEMj1Pb36Fo+flfToyQF9wgYyx+MpcOjZIY3aEk775u0s1OVFqdoWQyP+wQzY8UW17iY/F/K1HNTxRanaJj776u002P01md4WQsfDKYzY2SmJ2hImk4OiEPDA/XnN+jJjD+bJINzdObXeHkKjh5IE/Mj9bcIGLkLzvyFw8OUdld4WPlcX5tEg1OUZlcYGIkMXup0QyN01mdoWMlsXwqkY5PFFmdISOj77wu1c1OUhjdoSPj63l1Hg8MkRbc36IjJzG76hINzpPaniFi4+o4NqEPDBDW3B9hY+SsOjMbDczR15xfouQkLXow2c5NUdfcIGMjI+u4sxzOTNHXnB9h4+PpNHgkkAzPE9se4WMjJa45btZNjZIYHSBi4mOoMXlnEQzN05qdoKIjJKhzN2VQDM/T2l4gYyOi6DK3ZxANTxLZniCjJCQmrzgslk3NkZfdH2Jj46OpMzYkD8zP1RmdoKIjI+Tq9bGejwwQVhwdoSLi4uPqNHKgDwyQVdpeISLi4+PoMbUmEY2PE9ldoKJiYmOkq7QwnQ5M0dZb3uAiYyPk5Kx07htOTNGXG97iImJj4+Tq8rGgD0yP1VseISLjI+PjJi40KNZNjZKYHCAhIyLj46MnbjNn1Q6NUhidIGLj46SjImTsMm0bzkzRlxvfYSMjpCOjIuat82dVDYzRlxqfYWIjoyJiIeQtMijYjcyS1lwfYWLjI+Mi4mHnbzDkEs3N1Fjc4SJj46Oi4yIiJm4xZlUOTdNYnOAiY6MkIuIiYuOobm5i0o2QE9mdIGLi4yQi4yIh4iWsMChYDo1TWBze4SOi4uOjoeJh4KWsbygZTo2SFtveoeJj46Oi4iJh4KFmbC5lVc9N01ecIGHi4uOjIuIiYeEgImhsreESzU8UWV2goiMi4+Mh4iJgoGEgIyntadzRjZDVWx3iIiOjouOjISHhIKCfoCTqLecakQ5QVxqe4SIjoyMiYuFgYWCfYKCfpKnsKBxRzdBV2l3hYuMjImMi4KFgoGEhIB+gouap66OX0M5SF9vfoSMjoyMi4iJgoeEgICAfoJ+hJajraF2TzxDVGZ4gYeMjI6OjISHgoKFgYB+goJ+fYKJnKOqkmZKOkhYbXqCi4yMi4mIiYKHhICBgISAfoB9goKAh5afo6N9W0E/S19ze4SMjo+Mi4KEgYCAe4GBfXt+fn59gX19fX6Hj5qfnYdmTj1HWWp4gYmLj46Oi4uIhICFgICEgH6Efn6CgH5+foCAgH2BgouYmJyWfmNSQUZZaniFi4yPjIuJi4SIhYGAhYGAhIB+fYKAhIB+gn5+fn19fX6AgICAgIGOkJaTkIVsW09GTWBqe4WLkIyMi4mLhJmwd2ZxcXSCpnpjgnGEpnZngm+IpnNpgW+EoHhmgHOCoHhlgW2Co3dpgG2CpHRlgW+CpHRsgW+An3dwgW99nXh0gGp+loJ7eG94i5J+cXR3hZl+anhxhKB6ZoBtfqNzb4Ftfpp9d3tveIuSfm14dIWkdmaAbX6jd2yBb32Vgnt2c3qEn4BsfW+EpHZtgW99loSAd3B3hJ97aoBvgJ94dn1weouWfm99c4GkdHCAb32QjoBxdnSCpHhqfnN+kot7cXp0gqZ2aoFwfZCPgXR3doKgdHR9dH6FmoBtfnSAmX54eHZ4hKZ6bX5weIiLfW1zdnuaenR4cHqBo3dse3F9iJh+cHp2epaEfXd0dIKdd3Z7dnqEn3htfXN9iZx7b3t2fouOgHR3doCThHpzdnuAmIB4fXR0hJl4eHt2eoCdend9d3uBn3R0fnd7gZ90dH53eISfdHZ9d3iEmnZ2e3p7gZl4eHt2eoCYeH19dHt+kIJ4eHF6fpCJenZ2e3iHk313d3p4hJp6c3t2d4Sad3F7c36Eknp9enN6fYmPfnd3fXiEmnpzfnt6gZl6d313e36Ljnt3d312hJp2dn10fn6MhH17dHt4hJp6cXp2eoCSfnt6c354hJl0dHt2eoCOgXt9dHt4hJl0dIB0fn6LiXp4d3p4hJV4fX10gXqBmXp3fXeAe4iQgHh2e3uBjn56fXeBdoSVd3t9d4F6gZl4eH13gYCBlnp6fXiBfYSLenh3fX2BjImAeHh+fn6JiXt6fX1+gYeJgHh4e4CAiIl+eH19fX2IjIB4fX19fYSQgHN3dHp7gZB2c312fniCkHZ6gHSAeoGMeH19d4B7gYiEfX16e4CAgY97en17gH19jnh9fXuAgICEiH56fXuAfYGPdn19e4CAgISIfnp9e4CAgY53fX17gICAgYl+en19fX6Bjnp+fXuAfYCBjnd7fXt7gICBiX19fXuAgICEgnt9fX1+fn6Ifn19e3uAgICJeHt7e32BgICJeH19fXuAgICIe3uAd36AgICIe3uAe3t7e4GIe319d4CAe4KHgYJ4fX19fX2Bh319fX17gICAiXh7gH2AgH19hH19fX1+fn5+foh+eH59e4CAgIh7fX17gHuAgICFfn19fXuAe4CFe319e4CAgICAh3t9fX19fn5+god9fX19fX5+foKCfX19fX5+fn6CgX19fX1+fn5+hH19fX1+fn5+goJ7gX19gX19fX2BgX19fX1+fn6CgYJ+fX19fX6BfYGHfX2BfX19gX2Bgnt9gX2BfX19gYGCe319fX5+fnqBgHt7e3p+en6Ae4CAgHuAe4CAgICAgYF9gX19fX1+fn6CfX19fn5+foCAgIF9fX19fn5+fn6CgX19fX2CfX2BfYGBfX19fX5+foJ9fYF9fX19gn19fX2CfYF9gYF9fYF9gX2BgX19fX2BfX19foCAgX2BfX0=" id="lazerSound"></audio>
+
+<div class="audioControls">  
+<svg class="audioOn" viewBox="0 0 75 75">
+<g id="g1"><polygon
+id="polygon1"
+points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769"
+style="stroke-width:5;stroke-linejoin:round;"
+/><path id="path1"
+d="M 48.128,49.03 C 50.057,45.934 51.19,42.291 51.19,38.377 C 51.19,34.399 50.026,30.703 48.043,27.577"
+style="fill:none;stroke-width:5;stroke-linecap:round"/>
+<path id="path2"
+d="M 55.082,20.537 C 58.777,25.523 60.966,31.694 60.966,38.377 C 60.966,44.998 58.815,51.115 55.178,56.076"
+style="fill:none;stroke-width:5;stroke-linecap:round"/>
+<path id="path1"
+d="M 61.71,62.611 C 66.977,55.945 70.128,47.531 70.128,38.378 C 70.128,29.161 66.936,20.696 61.609,14.01"
+style="fill:none;stroke-width:5;stroke-linecap:round"/>
+</g>
+</svg>
+
+<svg class="audioOff" viewBox="0 0 75 75">
+  <g id="g1">
+  <polygon id="polygon1"
+   points="39.389,13.769 22.235,28.606 6,28.606 6,47.699 21.989,47.699 39.389,62.75 39.389,13.769"
+   style="stroke-width:5;stroke-linejoin:round;" />
+  <path
+   id="path3003"
+   d="M 48.651772,50.269646 69.395223,25.971024"
+   style="fill:none;stroke-width:5;stroke-linecap:round"/>
+  <path
+   id="path3003-1"
+   d="M 69.395223,50.269646 48.651772,25.971024"
+   style="fill:none;stroke-width:5;stroke-linecap:round"/>
+  </g>
+</svg>
+</div>
+<div id="message"></div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
